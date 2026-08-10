@@ -5,6 +5,7 @@ import time
 import re
 import unicodedata
 from bs4 import BeautifulSoup
+from datetime import datetime
 
 # ==================================================
 # CONFIGURAÇÕES - PREENCHA AQUI
@@ -76,7 +77,8 @@ def extrair_texto_da_url(url):
             "sobre a revista", "escopo", "foco", "público-alvo", "periodicidade",
             "taxa", "licença", "preprint", "direitos autorais", "conflito de interesses",
             "financiamento", "disponibilidade de dados", "como submeter", "author guidelines",
-            "submission guidelines", "manuscript preparation", "reference style"
+            "submission guidelines", "manuscript preparation", "reference style",
+            "issn", "e-issn", "periodicidade", "qualis"
         ]
         
         # Procura por headings (h1, h2, h3) ou textos em negrito que contenham as palavras-chave
@@ -114,6 +116,50 @@ def extrair_texto_da_url(url):
         return ""
 
 # ==================================================
+# VALIDAÇÃO DE JSON (NOVA FUNÇÃO)
+# ==================================================
+def validar_json(json_data, id_revista):
+    """
+    Verifica se o JSON gerado contém os campos obrigatórios.
+    Retorna (bool, lista_de_erros)
+    """
+    erros = []
+    campos_obrigatorios = {
+        "id": "ID da revista",
+        "nome": "Nome da revista",
+        "instituicao": "Instituição",
+        "limites": "Limites (objeto)",
+        "formatacao": "Formatação (objeto)",
+        "tipos_texto": "Tipos de texto (array)",
+        "checklist": "Checklist (array)"
+    }
+    
+    for campo, descricao in campos_obrigatorios.items():
+        if campo not in json_data:
+            erros.append(f"Campo '{campo}' ausente ({descricao})")
+        elif campo in ["limites", "formatacao"] and not isinstance(json_data[campo], dict):
+            erros.append(f"Campo '{campo}' deve ser um objeto")
+        elif campo == "tipos_texto" and not isinstance(json_data[campo], list):
+            erros.append(f"Campo '{campo}' deve ser um array")
+        elif campo == "checklist" and not isinstance(json_data[campo], list):
+            erros.append(f"Campo '{campo}' deve ser um array")
+    
+    # Verificar campos críticos dentro de limites
+    limites = json_data.get("limites", {})
+    if isinstance(limites, dict):
+        if not limites.get("artigo_palavras") and not limites.get("resumo_maximo"):
+            erros.append("Nenhum limite de palavras ou resumo encontrado em 'limites'")
+    
+    # Verificar se pelo menos um tipo_texto tem template
+    tipos = json_data.get("tipos_texto", [])
+    if isinstance(tipos, list) and tipos:
+        tem_template = any(t.get("template") for t in tipos if isinstance(t, dict))
+        if not tem_template:
+            erros.append("Nenhum 'template' preenchido nos 'tipos_texto'")
+    
+    return len(erros) == 0, erros
+
+# ==================================================
 # PÓS-PROCESSAMENTO: CORRIGIR ERROS COMUNS DO JSON
 # ==================================================
 def pos_processar_json(json_data, texto_original, nome_revista):
@@ -146,8 +192,10 @@ def pos_processar_json(json_data, texto_original, nome_revista):
     
     # 1. Corrigir extensão quando ela contiver formato de arquivo (.doc, .rtf, etc.)
     for tipo in json_data.get("tipos_texto", []):
+        if not isinstance(tipo, dict):
+            continue
         extensao = tipo.get("extensao", "")
-        if re.search(r'\.(rtf|doc|docx|odt|pdf)', extensao, re.I):
+        if isinstance(extensao, str) and re.search(r'\.(rtf|doc|docx|odt|pdf)', extensao, re.I):
             palavra_match = re.search(r'(\d{1,3}(?:\.\d{3})*(?:\s*a\s*\d{1,3}(?:\.\d{3})*)?\s*(?:palavras|caracteres|toques))', 
                                       tipo.get("detalhes", "") + " " + str(json_data.get("checklist", "")), re.I)
             if palavra_match:
@@ -162,10 +210,14 @@ def pos_processar_json(json_data, texto_original, nome_revista):
     
     # 2. Garantir herança de resumo e palavras-chave
     limites = json_data.get("limites", {})
+    if not isinstance(limites, dict):
+        limites = {}
     resumo_global = limites.get("resumo_maximo", "")
     palavras_chave_global = limites.get("palavras_chave_quantidade", "")
     
     for tipo in json_data.get("tipos_texto", []):
+        if not isinstance(tipo, dict):
+            continue
         if not tipo.get("resumo_maximo_palavras") and resumo_global:
             num = re.search(r'(\d+)', str(resumo_global))
             tipo["resumo_maximo_palavras"] = int(num.group(1)) if num else None
@@ -185,16 +237,19 @@ def pos_processar_json(json_data, texto_original, nome_revista):
     
     # 4. Ajustar periodicidade
     periodicidade = json_data.get("periodicidade", "")
-    if "contínua" in periodicidade.lower() and "submissão" not in periodicidade.lower():
+    if isinstance(periodicidade, str) and "contínua" in periodicidade.lower() and "submissão" not in periodicidade.lower():
         json_data["periodicidade"] = periodicidade + " (submissões em fluxo contínuo)"
     
-    # 5. CORREÇÃO: "palavras" para "toques" no resumo
-    if limites.get("resumo_maximo"):
+    # 5. CORREÇÃO: "palavras" para "toques" no resumo (agora mais abrangente)
+    if limites.get("resumo_maximo") and isinstance(limites["resumo_maximo"], str):
         resumo_str = str(limites["resumo_maximo"])
+        # Corrige "X palavras" para "X toques" para qualquer número, se for o caso da revista
         if "750 palavras" in resumo_str.lower() or "750palavras" in resumo_str.lower():
             limites["resumo_maximo"] = resumo_str.replace("palavras", "toques").replace("Palavras", "toques")
         if "150 palavras" in resumo_str.lower():
             limites["resumo_maximo"] = resumo_str.replace("150 palavras", "150 toques")
+        # Remove duplicação de palavras (ex: "700 palavras palavras")
+        limites["resumo_maximo"] = re.sub(r'(\b\w+\b)\s+\1', r'\1', limites["resumo_maximo"])
     
     # 6. GARANTIR QUE OS NOVOS CAMPOS EXISTAM
     if "titulo_maximo" not in limites:
@@ -203,11 +258,15 @@ def pos_processar_json(json_data, texto_original, nome_revista):
         limites["notas_rodape_formato"] = ""
     
     formatacao = json_data.get("formatacao", {})
+    if not isinstance(formatacao, dict):
+        formatacao = {}
     if "exemplos_referencias" not in formatacao:
         formatacao["exemplos_referencias"] = ""
     json_data["formatacao"] = formatacao
     
     adicionais = json_data.get("instrucoes_adicionais", {})
+    if not isinstance(adicionais, dict):
+        adicionais = {}
     if "declaracao_dados_opcoes" not in adicionais:
         adicionais["declaracao_dados_opcoes"] = ""
     json_data["instrucoes_adicionais"] = adicionais
@@ -217,9 +276,11 @@ def pos_processar_json(json_data, texto_original, nome_revista):
     contextuais = ["entrevista", "tradução", "dossiê", "dossie", "ensaio"]
     
     for tipo in json_data.get("tipos_texto", []):
+        if not isinstance(tipo, dict):
+            continue
         tipo_lower = tipo.get("tipo", "").lower()
         detalhes = tipo.get("detalhes", "").lower()
-        checklist = " ".join(json_data.get("checklist", [])).lower()
+        checklist = " ".join([str(item) for item in json_data.get("checklist", []) if item]).lower()
         texto_completo_verificacao = detalhes + " " + checklist
         
         tipo["submissao_aberta"] = True
@@ -258,6 +319,8 @@ def pos_processar_json(json_data, texto_original, nome_revista):
         json_data["imagem"] = gerar_nome_arquivo(nome_revista, "", "imagem")
     
     for tipo in json_data.get("tipos_texto", []):
+        if not isinstance(tipo, dict):
+            continue
         if not tipo.get("template") or tipo["template"] == "":
             tipo_nome = tipo.get("tipo", "manuscrito")
             tipo["template"] = gerar_nome_arquivo(nome_revista, tipo_nome, "template")
@@ -265,6 +328,9 @@ def pos_processar_json(json_data, texto_original, nome_revista):
     # 9. Garantir que checklist seja lista
     if not isinstance(json_data.get("checklist"), list):
         json_data["checklist"] = []
+    
+    # 10. Adicionar data de auditoria
+    json_data["data_auditoria"] = datetime.now().strftime("%Y-%m-%d")
     
     return json_data
 
@@ -281,8 +347,8 @@ Com base **exclusivamente** no texto oficial abaixo, gere um JSON **exatamente**
 1. NUNCA invente informações. Se não encontrar no texto, use "" (string vazia) ou null.
 2. Para "qualis": NÃO assuma "A1". Deixe "" se não encontrar.
 3. No array "tipos_texto", o campo "extensao" deve conter APENAS o limite de palavras (ex: "4.000 a 14.000 palavras").
-4. Extraia "issn", "periodicidade", "licenca".
-5. Extraia "limites.resumo_maximo" com NÚMERO e UNIDADE EXATA (ex: "750 toques").
+4. Extraia "issn" (formato XXXX-XXXX), "periodicidade", "licenca" (ex: "CC BY", "CC BY-NC").
+5. Extraia "limites.resumo_maximo" com NÚMERO e UNIDADE EXATA (ex: "750 toques", "250 palavras").
 6. Extraia "limites.titulo_maximo", "palavras_chave_quantidade", "autores_maximo" (inteiro), "notas_rodape_palavras" e "notas_rodape_formato".
 7. Extraia exemplos de referências para "formatacao.exemplos_referencias".
 8. Extraia exemplos de citações para "formatacao.exemplos_citacoes" (ex: "(Sobrenome, ano, p. X)").
@@ -291,6 +357,8 @@ Com base **exclusivamente** no texto oficial abaixo, gere um JSON **exatamente**
 11. Extraia **citacoes_longas** como objeto: {{ "recuo": "4 cm", "fonte": 11, "espacamento": "simples" }}.
 12. Extraia **tabelas_figuras** com regras completas.
 13. Se algum campo de formatação não for encontrado, preencha com "" e marque "formatacao_origem": "padrao" no nível raiz do JSON. Caso contrário, use "formatacao_origem": "extraido".
+14. **IMPORTANTE**: Preencha "issn" com o número no formato XXXX-XXXX. Se houver mais de um, use o principal (impresso ou online). Se não encontrar, deixe vazio.
+15. **IMPORTANTE**: Preencha "estrutura_sugerida" em cada tipo_texto com a estrutura sugerida pela revista (ex: ["Introdução", "Metodologia", "Resultados", "Discussão", "Conclusão"]). Se a revista não especificar, deixe array vazio.
 
 A estrutura obrigatória é:
 
@@ -449,6 +517,16 @@ def processar_todas_revistas():
             print(f"❌ Falha ao gerar JSON para {nome_rev}")
             continue
 
+        # VALIDAÇÃO PÓS-GERAÇÃO (NOVA)
+        valido, erros = validar_json(json_gerado, id_rev)
+        if not valido:
+            print(f"⚠️ JSON gerado com problemas para {nome_rev}:")
+            for erro in erros:
+                print(f"   - {erro}")
+            print("   ⚠️ Salvo mesmo assim, mas requer revisão manual.")
+        else:
+            print(f"✅ JSON validado com sucesso para {nome_rev}")
+
         os.makedirs(PASTA_REVISTAS, exist_ok=True)
         caminho_json = os.path.join(PASTA_REVISTAS, f"{id_rev}.json")
         with open(caminho_json, "w", encoding="utf-8") as f:
@@ -460,7 +538,7 @@ def processar_todas_revistas():
     ids_lista = [r["id"] for r in config["revistas"]]
     index_path = os.path.join(PASTA_REVISTAS, "index.json")
     with open(index_path, "w", encoding="utf-8") as f:
-        json.dump({"ids": ids_lista, "atualizado_em": "2026-03-30"}, f, indent=2)
+        json.dump({"ids": ids_lista, "atualizado_em": datetime.now().strftime("%Y-%m-%d")}, f, indent=2)
     print(f"\n📋 index.json atualizado com {len(ids_lista)} revistas.")
 
 if __name__ == "__main__":
