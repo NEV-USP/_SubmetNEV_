@@ -26,7 +26,7 @@
     "artigo_palavras": "5.000 a 8.000 palavras",
     "nota_tecnica_palavras": null,
     "comentario_critico_palavras": null,
-    "resumo_maximo": "250 toques",
+    "resumo_maximo": "250 palavras",
     "titulo_maximo": "20 palavras",
     "palavras_chave_quantidade": "Até 5",
     "autores_maximo": 5,
