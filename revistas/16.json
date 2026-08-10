@@ -4,7 +4,7 @@
   "imagem": "imagem/o_publico_e_o_privado.png",
   "instituicao": "Universidade Estadual do Ceará (UECE), Programa de Pós-Graduação em Sociologia (PPGS)",
   "qualis": "A4",
-  "issn": "",
+  "issn": "1983-3863",
   "foco": "Sociologia e ciências correlatas. Publicação de pesquisas que abordem a relação entre as esferas pública e privada na sociedade contemporânea.",
   "descricao": "Revista vinculada ao Programa de Pós-Graduação em Sociologia da UECE. Publica artigos, ensaios, entrevistas, traduções, relatórios de pesquisa e resenhas. Opera com números temáticos e seção de fluxo contínuo.",
   "avaliacao": "A revista utiliza sistema de avaliação duplo-cega por pares. Os artigos são submetidos à análise de especialistas ad hoc, sem identificação de autores e pareceristas. Números temáticos contam com organizadores que acompanham o processo de avaliação e revisão dos artigos.",
@@ -38,7 +38,7 @@
     "fonte": "Times New Roman",
     "tamanho_fonte": 12,
     "espacamento_entrelinhas": 1.5,
-    "margens": "2,5 cm",
+    "margens": "2,5 cm em todos os lados",
     "recuo_primeira_linha": "",
     "alinhamento": null,
     "citacoes_longas": {
@@ -180,7 +180,7 @@
     "O arquivo da submissão está em formato Microsoft Word, OpenOffice ou RTF.",
     "A identificação dos autores não aparece no original que será avaliado.",
     "URLs para as referências foram informadas quando possível.",
-    "O texto está em espaço simples, usa fonte de 12-pontos, emprega itálico em vez de sublinhado (exceto em URLs).",
+    "O texto está em espaço 1,5, usa fonte de 12-pontos, emprega itálico em vez de sublinhado (exceto em URLs).",
     "As figuras e tabelas estão inseridas no texto, não no final do documento como anexos.",
     "O texto segue os padrões de estilo e requisitos bibliográficos descritos em Diretrizes para Autores.",
     "Questões éticas relativas a pesquisas com seres humanos devem ser acompanhadas da informação de autorização do Comitê de Ética (Resolução 196/96 do CNS e Declaração de Helsinque)."
