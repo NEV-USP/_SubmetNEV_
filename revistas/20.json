@@ -8,10 +8,10 @@
   "foco": "Artigos que promovam o debate teórico em criminologia e áreas afins, incluindo análises críticas de conceitos fundamentais, desenvolvimento de novas perspectivas teóricas e reflexões sobre a relação entre teoria, pesquisa e prática.",
   "descricao": "Periódico internacional publicado pela SAGE Publications, dedicado exclusivamente à discussão teórica no campo da criminologia. Busca publicar trabalhos que desafiem paradigmas estabelecidos, integrem diferentes tradições teóricas e ofereçam contribuições originais para o entendimento do crime, justiça e controle social.",
   "avaliacao": "Revisão por pares anônima (double-blind peer review).",
-  "avaliacao_preprint": "",
-  "taxa": "",
-  "periodicidade": "Bimestral (6 edições por ano)",
-  "preprint": "",
+  "avaliacao_preprint": "Aceita submissão de manuscritos previamente depositados em servidores preprint. O autor deve informar o DOI do preprint no momento da submissão. Não são permitidas alterações no preprint enquanto o manuscrito estiver sob avaliação. Após a publicação, o autor deve incluir um link no preprint para a versão final publicada.",
+  "taxa": "Gratuita. Não há cobrança de taxas para submissão.",
+  "periodicidade": "Trimestral (4 edições por ano)",
+  "preprint": "Sim. Aceita preprints. O autor deve informar o DOI do preprint no sistema de submissão.",
   "licenca": "",
   "data_auditoria": "2026-03-30",
   "url_fonte_instrucoes": "https://journals.sagepub.com/author-instructions/tcr",
@@ -26,9 +26,9 @@
     "artigo_palavras": "7000 a 9000 palavras (incluindo referências, notas e tabelas)",
     "nota_tecnica_palavras": "",
     "comentario_critico_palavras": "",
-    "resumo_maximo": "150 a 250 palavras",
+    "resumo_maximo": "100 a 120 palavras",
     "titulo_maximo": null,
-    "palavras_chave_quantidade": "4 a 6",
+    "palavras_chave_quantidade": "Até 5",
     "autores_maximo": null,
     "notas_rodape_palavras": "",
     "notas_rodape_formato": "",
@@ -59,14 +59,15 @@
       "detalhes": "Artigos originais que apresentem contribuições teóricas significativas para a criminologia, bem como pesquisas empíricas com forte ancoragem teórica.",
       "titulacao_minima_autor": "",
       "idiomas_aceitos": ["Inglês"],
-      "resumo_maximo_palavras": 250,
-      "palavras_chave_quantidade": "4 a 6",
+      "resumo_maximo_palavras": 120,
+      "palavras_chave_quantidade": "Até 5",
       "estrutura_sugerida": [],
       "requisitos_especificos": [
         "O manuscrito não deve ter sido publicado anteriormente nem estar sob consideração por outro periódico.",
         "Incluir carta de apresentação (cover letter) com justificativa da relevância teórica do trabalho.",
         "Arquivo principal deve estar anonimizado para avaliação cega.",
-        "Página de rosto separada com título, autores, afiliações, ORCID, e-mail do autor correspondente e declaração de conflito de interesses."
+        "Página de rosto separada com título, autores, afiliações, ORCID, e-mail do autor correspondente e declaração de conflito de interesses.",
+        "Se o manuscrito foi depositado em servidor preprint, informar o DOI no sistema de submissão."
       ],
       "referencias_minimas": null,
       "template": "templates/theoretical_criminology_artigo.docx",
@@ -95,18 +96,19 @@
     "O manuscrito é original e não foi publicado nem está sob avaliação em outro periódico.",
     "O arquivo do manuscrito está anonimizado, sem identificação de autores ou afiliações.",
     "A página de rosto contém todos os dados dos autores (nome completo, afiliação, ORCID, e-mail).",
-    "O resumo tem entre 150 e 250 palavras e reflete o conteúdo do artigo.",
-    "Foram fornecidas de 4 a 6 palavras-chave.",
+    "O resumo tem entre 100 e 120 palavras e reflete o conteúdo do artigo.",
+    "Foram fornecidas até 5 palavras-chave.",
     "Todas as fontes citadas no texto estão presentes na lista de referências e vice-versa.",
     "As referências seguem o estilo SAGE Harvard.",
     "A carta de apresentação justifica a relevância teórica do trabalho.",
-    "Tabelas e figuras estão numeradas e com títulos/legendas adequados."
+    "Tabelas e figuras estão numeradas e com títulos/legendas adequados.",
+    "Se houver preprint, o DOI foi informado no sistema de submissão."
   ],
   "instrucoes_adicionais": {
     "contribuicao_autores": "Recomenda-se especificar a contribuição de cada autor (ex.: CRediT Taxonomy).",
     "disponibilidade_dados": "Encorajado o depósito de dados em repositórios confiáveis e a menção no artigo.",
     "declaracao_dados_opcoes": null,
     "financiamento": "Declarar fontes de financiamento e números de concessão na página de rosto.",
-    "preprint": ""
+    "preprint": "A revista aceita submissão de manuscritos previamente depositados em servidores preprint. O autor deve informar o DOI do preprint no momento da submissão. Não são permitidas alterações no preprint enquanto o manuscrito estiver sob avaliação. Após a publicação, o autor deve incluir um link no preprint para a versão final publicada."
   }
 }
