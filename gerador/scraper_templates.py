@@ -1,6 +1,7 @@
 import os
 import json
 import re
+from datetime import datetime
 from docx import Document
 from docx.shared import Pt, Cm, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -207,7 +208,10 @@ def adicionar_rodape_com_marca(doc):
         except:
             pass
         p.add_run(" ")
-    run = p.add_run("Template gerado automaticamente pelo SubmetNEV – NEV/USP")
+    
+    # ADICIONADO: DATA DE GERAÇÃO NO RODAPÉ
+    data_atual = datetime.now().strftime("%d/%m/%Y")
+    run = p.add_run(f"Template gerado automaticamente pelo SubmetNEV – NEV/USP em {data_atual}")
     run.font.size = Pt(8)
     run.font.color.rgb = RGBColor(128, 128, 128)
 
@@ -296,13 +300,21 @@ def adicionar_estrutura_texto(doc, tipo_info, revista):
     estrutura = tipo_info.get('estrutura_sugerida', [])
     if not estrutura:
         tipo_nome = tipo_info.get('tipo', '').lower()
+        # Estruturas específicas por tipo de manuscrito
         if "resenha" in tipo_nome:
             estrutura = ["Contextualização da obra", "Análise crítica", "Considerações finais"]
         elif "ensaio" in tipo_nome:
             estrutura = ["Tese central e problematização", "Desenvolvimento argumentativo", "Conclusão e implicações"]
         elif "entrevista" in tipo_nome:
             estrutura = ["Apresentação do entrevistado e contextualização", "Transcrição da entrevista (perguntas e respostas)", "Considerações finais"]
+        elif "nota técnica" in tipo_nome or "nota tecnica" in tipo_nome:
+            estrutura = ["Introdução", "Descrição técnica / Metodologia", "Resultados / Aplicação", "Conclusão"]
+        elif "tradução" in tipo_nome or "traducao" in tipo_nome:
+            estrutura = ["Apresentação do texto traduzido", "Texto traduzido", "Notas do tradutor"]
+        elif "relatório" in tipo_nome or "relatorio" in tipo_nome:
+            estrutura = ["Introdução", "Metodologia", "Resultados", "Discussão", "Conclusão"]
         else:
+            # Estrutura padrão para artigos
             estrutura = ["INTRODUÇÃO", "REFERENCIAL TEÓRICO", "METODOLOGIA", "RESULTADOS", "DISCUSSÃO", "CONCLUSÃO", "REFERÊNCIAS"]
     for secao in estrutura:
         if secao:
@@ -416,7 +428,7 @@ def gerar_template(revista_data, tipo_info, caminho_template):
     if nome_revista is None:
         nome_revista = 'Revista'
     adicionar_cabecalho_com_icone(doc, nome_revista)
-    adicionar_rodape_com_marca(doc)
+    adicionar_rodape_com_marca(doc)  # Agora inclui data de geração
     adicionar_numero_pagina_rodape(doc)
     
     # Formatação geral
@@ -433,7 +445,7 @@ def gerar_template(revista_data, tipo_info, caminho_template):
         limites = {}
     adicionar_secao_resumo_palavras_chave(doc, limites, revista_data)
     
-    # Estrutura do texto (agora com estrutura para entrevistas)
+    # Estrutura do texto (agora com estruturas específicas)
     adicionar_estrutura_texto(doc, tipo_info, revista_data)
     
     # Checklist
@@ -479,8 +491,19 @@ def processar_todas_revistas():
     total_templates = 0
     for json_file in jsons:
         caminho_json = os.path.join(PASTA_REVISTAS, json_file)
-        with open(caminho_json, 'r', encoding='utf-8') as f:
-            revista = json.load(f)
+        
+        # VALIDAÇÃO DE JSON (NOVA)
+        try:
+            with open(caminho_json, 'r', encoding='utf-8') as f:
+                revista = json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"\n❌ ERRO: JSON inválido - {json_file}")
+            print(f"   → {e}")
+            print("   ⚠️ Pule este arquivo e corrija manualmente.")
+            continue
+        except Exception as e:
+            print(f"\n❌ ERRO ao ler {json_file}: {e}")
+            continue
         
         nome_revista = revista.get('nome', 'Desconhecida')
         if nome_revista is None:
