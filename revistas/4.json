@@ -26,12 +26,13 @@
     "artigo_palavras": "Até 10.000 palavras",
     "nota_tecnica_palavras": null,
     "comentario_critico_palavras": null,
-    "resumo_maximo": 250,
+    "resumo_maximo": "250 palavras",
     "titulo_maximo": null,
-    "palavras_chave_quantidade": 5,
+    "palavras_chave_quantidade": "5",
     "autores_maximo": 4,
-    "notas_rodape": "Limitadas ao mínimo essencial",
-    "outros_limites": "Anexos e apêndices não são aceitos, exceto se indispensáveis"
+    "notas_rodape_palavras": null,
+    "notas_rodape_formato": "limitadas ao mínimo essencial; numeradas sequencialmente",
+    "outros_limites": "Resenhas: até 4.500 palavras; Anexos e apêndices não são aceitos, exceto se indispensáveis"
   },
   "formatacao": {
     "fonte": "Times New Roman",
@@ -93,7 +94,7 @@
       "referencias_minimas": null,
       "template": "templates/sociologias_resenhas.docx",
       "submissao_aberta": true,
-      "justificativa_submissao": "Submissão aberta para resenhas"
+      "justificativa_submissao": "Tipo de manuscrito aceito para submissão"
     },
     {
       "tipo": "Entrevistas",
@@ -112,7 +113,7 @@
       "referencias_minimas": null,
       "template": "templates/sociologias_entrevistas.docx",
       "submissao_aberta": true,
-      "justificativa_submissao": "Submissão aberta para entrevistas"
+      "justificativa_submissao": "Tipo de manuscrito aceito para submissão"
     },
     {
       "tipo": "Dossiês",
@@ -129,7 +130,7 @@
       "referencias_minimas": null,
       "template": "templates/sociologias_dossies.docx",
       "submissao_aberta": false,
-      "justificativa_submissao": "Submissão apenas por chamada temática mediante edital"
+      "justificativa_submissao": "Submissão apenas mediante chamada pública temática"
     }
   ],
   "checklist": [
