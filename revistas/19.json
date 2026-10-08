@@ -3,19 +3,19 @@
   "nome": "Contemporânea - Revista de Sociologia da UFSCar",
   "imagem": "imagem/contemporanea_ufscar.png",
   "instituicao": "Universidade Federal de São Carlos (UFSCar)",
-  "qualis": "",
+  "qualis": "A2",
   "issn": "2236-532X (impresso) / 2316-1329 (online)",
   "foco": "A revista é particularmente aberta a abordagens emergentes sobre novos conflitos sociais, diferenças de gênero, sexualidade, raça/etnia assim como outras formas de desigualdade, deslocamentos, processos migratórios, territorialidades e mobilidades, religiosidades, sustentabilidade, transformações no trabalho e nas profissões, violência, novas articulações entre teoria e empiria, revisões teóricas a partir dos desafios de pesquisa do presente e novas configurações do Estado e formas de governança.",
-  "descricao": "Contemporânea – Revista de Sociologia da UFSCar é um periódico científico quadrimestral que tem por objetivo veicular a produção de pesquisadores/as nacionais e estrangeiros criando diálogos sobre temas de fronteira das ciências sociais. Contemporânea recebe artigos acadêmicos de diferentes áreas das Ciências Humanas, mas que estejam necessariamente conectados a debates e referências bibliográficas mais amplas da Sociologia nacional e internacional.",
+  "descricao": "Contemporânea – Revista de Sociologia da UFSCar é um periódico científico em regime de publicação contínua que tem por objetivo veicular a produção de pesquisadores/as nacionais e estrangeiros criando diálogos sobre temas de fronteira das ciências sociais. Contemporânea recebe artigos acadêmicos de diferentes áreas das Ciências Humanas, mas que estejam necessariamente conectados a debates e referências bibliográficas mais amplas da Sociologia nacional e internacional.",
   "avaliacao": "Avaliação duplamente anônima por pares (double-blind peer review).",
-  "avaliacao_preprint": "",
-  "taxa": "",
-  "periodicidade": "Quadrimestral",
-  "preprint": "",
+  "avaliacao_preprint": "Aceita submissões com aviso prévio de depósito em repositórios abertos confiáveis, sob consulta editorial.",
+  "taxa": "Gratuita. Não há cobrança de taxa de submissão, processamento de artigos (APC) ou publicação.",
+  "periodicidade": "Publicação Contínua (Rolling Publication)",
+  "preprint": "Aceita preprints mediante declaração no formulário de submissão e indicação de repositório público aceito.",
   "licenca": "Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0)",
-  "data_auditoria": "2026-03-30",
-  "url_fonte_instrucoes": "https://portal.amelica.org/ameli/static/media/normas/norcol537.html",
-  "ultima_atualizacao_normas": null,
+  "data_auditoria": "2026-10-08",
+  "url_fonte_instrucoes": "https://www.contemporanea.ufscar.br/index.php/contemporanea/about/submissions#authorGuidelines",
+  "ultima_atualizacao_normas": "2026-10-08",
   "formatacao_origem": "extraido",
   "links": {
     "site": "https://www.contemporanea.ufscar.br",
@@ -26,62 +26,66 @@
     "artigo_palavras": "",
     "nota_tecnica_palavras": "",
     "comentario_critico_palavras": "",
-    "resumo_maximo": "7 linhas",
+    "resumo_maximo": "Aproximadamente 7 linhas (até 150 palavras)",
     "titulo_maximo": null,
-    "palavras_chave_quantidade": "máximo 5",
+    "palavras_chave_quantidade": "Até 5",
     "autores_maximo": null,
     "notas_rodape_palavras": null,
-    "notas_rodape_formato": "",
-    "outros_limites": "Artigos: máximo 25 páginas; Resenhas: máximo 6 páginas"
+    "notas_rodape_formato": "Apenas explicativas, numeradas consecutivamente ao final da página",
+    "outros_limites": "Artigos: máximo 25 páginas; Resenhas: máximo 6 páginas (limite de 2 autores)"
   },
   "formatacao": {
     "fonte": "Times New Roman",
     "tamanho_fonte": 12,
     "espacamento_entrelinhas": 1.5,
-    "margens": "",
-    "recuo_primeira_linha": "",
-    "alinhamento": "",
+    "margens": "2,5 cm",
+    "recuo_primeira_linha": "1,25 cm",
+    "alinhamento": "Justificado",
     "citacoes_longas": {
       "recuo": "4 cm",
       "fonte": 11,
       "espacamento": "simples"
     },
     "tabelas_figuras": "As figuras e tabelas devem ser inseridas no texto, não no final do documento na forma de anexos. Em casos de textos com imagens e/ou figuras, devem ser enviadas em formato JPEG. A responsabilidade pelos direitos autorais de reprodução é do autor.",
-    "citacoes_formato": "As citações devem seguir o formato: (SOBRENOME, ano, página). Exemplo: (Butler, 2003: 25). Preferencialmente na língua do artigo; se em língua original, devem vir em nota de rodapé.",
-    "referencias_formato": "As referências bibliográficas devem seguir as normas da ABNT NBR 6023, com exemplos específicos fornecidos nas diretrizes. Livros, capítulos de livros, artigos de periódicos e teses/dissertações possuem formatos distintos.",
-    "exemplos_citacoes": "(SOBRENOME, ano, página)",
-    "exemplos_referencias": "LIVRO – BECKER, Howard. Outsiders: Estudos de Sociologia do Desvio. Rio de Janeiro: Jorge Zahar, 2008. CAPÍTULO DE LIVRO – HONNETH, Axel. Teoria Crítica. In: GIDDENS, Anthony; TURNER, Jonathan (Orgs.). Teoria Social Hoje. São Paulo: Editora UNESP, 1999. p. 503-552. ARTIGO EM REVISTA – SILVA, Maria Aparecida de Moraes. A cultura na esteira do tempo. São Paulo em Perspectiva, São Paulo, v. 15, n. 3, p. 102-112, jul. 2001."
+    "citacoes_formato": "As citações devem seguir o formato: (SOBRENOME, ano, página). Exemplo: (Butler, 2003, p. 25). Citações em língua estrangeira traduzidas no corpo do texto devem conter o texto original na nota de rodapé.",
+    "referencias_formato": "As referências bibliográficas devem seguir rigorosamente as normas da ABNT NBR 6023, com links de DOI fornecidos sempre que disponíveis.",
+    "exemplos_citacoes": "(SOBRENOME, ano, p. página)",
+    "exemplos_referencias": "LIVRO – BECKER, Howard. Outsiders: Estudos de Sociologia do Desvio. Rio de Janeiro: Jorge Zahar, 2008.\nCAPÍTULO DE LIVRO – HONNETH, Axel. Teoria Crítica. In: GIDDENS, Anthony; TURNER, Jonathan (Orgs.). Teoria Social Hoje. São Paulo: Editora UNESP, 1999. p. 503-552.\nARTIGO EM REVISTA – SILVA, Maria Aparecida de Moraes. A cultura na esteira do tempo. São Paulo em Perspectiva, São Paulo, v. 15, n. 3, p. 102-112, jul. 2001."
   },
   "tipos_texto": [
     {
       "tipo": "Artigo original",
       "extensao": "máximo 25 páginas (Times New Roman 12, espaço 1,5)",
       "detalhes": "Artigos acadêmicos de diferentes áreas das Ciências Humanas, conectados a debates e referências bibliográficas mais amplas da Sociologia nacional e internacional.",
-      "titulacao_minima_autor": "Mestre",
-      "idiomas_aceitos": [],
-      "resumo_maximo_palavras": null,
-      "palavras_chave_quantidade": "máximo 5",
+      "titulacao_minima_autor": "Mestre (pelo menos um dos autores deve possuir o título de Mestre)",
+      "idiomas_aceitos": [
+        "Português",
+        "Inglês",
+        "Espanhol"
+      ],
+      "resumo_maximo_palavras": 150,
+      "palavras_chave_quantidade": "3 a 5",
       "estrutura_sugerida": [
         "Título em português, inglês e espanhol",
-        "Resumo (máximo 7 linhas)",
-        "Palavras-chave (máximo 5)",
+        "Resumo e Abstract (aproximadamente 7 linhas)",
+        "Palavras-chave e Keywords (de 3 a 5)",
         "Introdução",
         "Desenvolvimento (com subseções)",
         "Conclusão",
-        "Referências"
+        "Referências (ABNT NBR 6023)"
       ],
       "requisitos_especificos": [
         "Originalidade e ineditismo",
         "Não estar sob avaliação em outro periódico",
-        "Autor(es) com titulação mínima de mestre",
+        "Atender à titulação mínima de mestre por pelo menos um dos coautores",
         "Formatação em Word, Times New Roman 12, espaço 1,5",
-        "Resumo em até 7 linhas",
-        "Palavras-chave em até 5",
+        "Resumo e Abstract em até 7 linhas (máximo 150 palavras)",
+        "Palavras-chave de 3 a 5 termos",
         "Títulos de livros e revistas em itálico",
         "Palavras estrangeiras e ênfases em itálico",
-        "Citações no formato autor-data-página",
+        "Citações no formato autor-data-página (ABNT NBR 10520)",
         "Notas de rodapé numeradas consecutivamente",
-        "Referências ao final, seguindo exemplos fornecidos"
+        "Referências ao final, seguindo rigorosamente a ABNT NBR 6023"
       ],
       "referencias_minimas": null,
       "template": "templates/CONTEMPORANEA_Artigo_Original.docx",
@@ -91,65 +95,77 @@
     {
       "tipo": "Resenha",
       "extensao": "máximo 6 páginas (Times New Roman 12, espaço 1,5)",
-      "detalhes": "Resenhas de livros publicados no Brasil (últimos 2 anos) e no exterior (últimos 3 anos).",
+      "detalhes": "Resenhas críticas de livros publicados no Brasil ou no exterior nos últimos 3 anos, de alta relevância para a Sociologia.",
       "titulacao_minima_autor": null,
-      "idiomas_aceitos": [],
+      "idiomas_aceitos": [
+        "Português",
+        "Inglês",
+        "Espanhol"
+      ],
       "resumo_maximo_palavras": null,
       "palavras_chave_quantidade": null,
       "estrutura_sugerida": [
-        "Folha de rosto com nome do autor, filiação institucional, telefone e e-mail",
-        "Corpo do texto sem identificação do autor para garantir anonimato",
-        "Análise crítica da obra"
+        "Folha de rosto com nome do autor, filiação institucional, ORCID e e-mail",
+        "Referência bibliográfica completa da obra resenhada no início",
+        "Corpo do texto sem identificação do autor para garantir anonimato na avaliação",
+        "Análise crítica detalhada da obra"
       ],
       "requisitos_especificos": [
-        "Livro publicado no máximo há 3 anos (exterior) ou 2 anos (Brasil)",
-        "Folha de rosto separada com dados do autor",
-        "Anonimato garantido no corpo do texto",
+        "Livro publicado no máximo há 3 anos (nacional ou internacional)",
+        "Máximo de 2 autores por resenha",
+        "Folha de rosto separada com dados de autoria",
+        "Anonimato garantido no corpo do arquivo principal",
         "Formatação em Word, Times New Roman 12, espaço 1,5"
       ],
       "referencias_minimas": null,
       "template": "templates/CONTEMPORANEA_Resenha.docx",
       "submissao_aberta": true,
-      "justificativa_submissao": "Tipo de manuscrito aceito para submissão"
+      "justificativa_submissao": "Tipo de manuscrito aceito para submissão contínua"
     },
     {
       "tipo": "Dossiê",
       "extensao": "5 a 6 artigos originais",
-      "detalhes": "Dossiês temáticos organizados pelo Comitê Editorial, com artigos originais avaliados por pares.",
-      "titulacao_minima_autor": null,
-      "idiomas_aceitos": [],
-      "resumo_maximo_palavras": null,
-      "palavras_chave_quantidade": null,
+      "detalhes": "Dossiês temáticos organizados pelo Comitê Editorial ou por chamadas públicas específicas, com artigos originais avaliados por pares.",
+      "titulacao_minima_autor": "Mestre",
+      "idiomas_aceitos": [
+        "Português",
+        "Inglês",
+        "Espanhol"
+      ],
+      "resumo_maximo_palavras": 150,
+      "palavras_chave_quantidade": "3 a 5",
       "estrutura_sugerida": [
-        "Apresentação do coordenador",
-        "Mínimo de 5 artigos inéditos",
-        "Artigos de pesquisadores de pelo menos 3 unidades da federação"
+        "Apresentação dos organizadores do dossiê",
+        "Mínimo de 5 artigos inéditos vinculados à temática",
+        "Diversidade de filiação institucional dos autores"
       ],
       "requisitos_especificos": [
-        "Coordenação definida pelo Comitê Editorial",
-        "Todos os artigos devem ser originais e inéditos",
-        "Avaliação por pares de cada artigo"
+        "Coordenação definida por chamada pública ou pelo Comitê Editorial",
+        "Todos os artigos devem ser originais, inéditos e submetidos a duplo-cego",
+        "Diversidade geográfica e institucional comprovada entre os autores"
       ],
       "referencias_minimas": null,
       "template": "templates/CONTEMPORANEA_Dossie.docx",
       "submissao_aberta": false,
-      "justificativa_submissao": "Organização pelo Comitê Editorial, não por submissão espontânea"
+      "justificativa_submissao": "Vinculado a chamadas públicas específicas organizadas pelo Comitê Editorial"
     }
   ],
   "checklist": [
-    "A contribuição é original e inédita, e não está sendo avaliada para publicação por outra revista",
-    "O arquivo da submissão está em formato Word",
-    "O texto está em espaço 1,5 e usa fonte Times New Roman 12",
-    "O texto emprega itálico em vez de sublinhado (exceto em URLs)",
-    "As figuras e tabelas estão inseridas no texto, não no final do documento",
-    "O texto segue os padrões de estilo e requisitos bibliográficos descritos nas Diretrizes para Autores",
-    "Em caso de submissão a uma seção com avaliação pelos pares, as instruções para avaliação cega foram seguidas"
+    "A contribuição é original e inédita, e não está sendo avaliada para publicação por outra revista.",
+    "O arquivo da submissão está em formato editável (.doc ou .docx).",
+    "O texto está em espaço 1,5 e usa fonte Times New Roman 12, com margens de 2,5 cm.",
+    "Pelo menos um dos autores do artigo possui a titulação mínima de Mestre.",
+    "O resumo/abstract contém aproximadamente 7 linhas (máximo 150 palavras) e possui entre 3 e 5 palavras-chave.",
+    "Para resenhas, o livro analisado foi publicado nos últimos 3 anos e o texto tem no máximo 2 autores.",
+    "As figuras e tabelas estão inseridas no corpo do texto, em formato compatível e com alta resolução.",
+    "As citações no texto e a lista de referências seguem estritamente as normas da ABNT (NBR 10520 e NBR 6023).",
+    "As instruções de avaliação cega (double-blind) foram seguidas, removendo metadados e identificação do texto principal."
   ],
   "instrucoes_adicionais": {
-    "contribuicao_autores": "Os autores devem informar sua filiação institucional na folha de rosto, seguindo o modelo: nome da universidade por extenso, sigla entre parênteses, cidade, país e e-mail. Exemplo: Universidade Federal de São Carlos (UFSCar) - São Carlos - Brasil - xxxxx@ufscar.br. ORCID é recomendado.",
-    "disponibilidade_dados": "A revista apoia o movimento Ciência Aberta, incentivando a disponibilização de dados, protocolos e outros materiais de pesquisa.",
+    "contribuicao_autores": "Os autores devem informar sua filiação institucional na folha de rosto separada, seguindo o padrão: nome da universidade por extenso, sigla entre parênteses, cidade, país e e-mail institucional. Exemplo: Universidade Federal de São Carlos (UFSCar) - São Carlos - Brasil - email@ufscar.br. O registro ORCID é obrigatório para todos os autores.",
+    "disponibilidade_dados": "A revista apoia as práticas de Ciência Aberta, encorajando os autores a disponibilizar dados de pesquisa, instrumentos e códigos em repositórios institucionais ou públicos de dados acessíveis.",
     "declaracao_dados_opcoes": null,
-    "financiamento": "Caso o trabalho seja resultado de pesquisa financiada, adicionar uma nota de rodapé curta a partir do título, indicando o financiamento conforme as regras da agência financiadora.",
-    "preprint": "Não especificado. No entanto, a revista exige que os manuscritos não tenham sido publicados total ou parcialmente como parte de livros ou em revistas, nem enviados simultaneamente a outro periódico."
+    "financiamento": "Caso o trabalho seja resultado de pesquisa financiada por agências de fomento (CNPq, CAPES, FAPESP, etc.), adicionar nota explicativa vinculada ao título, especificando o número do processo/concessão.",
+    "preprint": "A revista aceita a submissão de manuscritos previamente depositados em servidores de preprints acadêmicos reconhecidos, devendo o autor declarar a URL/DOI do depósito no momento do envio."
   }
 }
