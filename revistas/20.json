@@ -9,13 +9,13 @@
   "descricao": "Periódico internacional publicado pela SAGE Publications, dedicado exclusivamente à discussão teórica no campo da criminologia. Busca publicar trabalhos que desafiem paradigmas estabelecidos, integrem diferentes tradições teóricas e ofereçam contribuições originais para o entendimento do crime, justiça e controle social.",
   "avaliacao": "Revisão por pares anônima (double-blind peer review).",
   "avaliacao_preprint": "Aceita submissão de manuscritos previamente depositados em servidores preprint. O autor deve informar o DOI do preprint no momento da submissão. Não são permitidas alterações no preprint enquanto o manuscrito estiver sob avaliação. Após a publicação, o autor deve incluir um link no preprint para a versão final publicada.",
-  "taxa": "Gratuita. Não há cobrança de taxas para submissão.",
+  "taxa": "Gratuita para o modelo de publicação tradicional (assinatura). Oferece opção voluntária de Acesso Aberto (Gold Open Access) mediante cobrança de taxa de processamento de artigo (APC).",
   "periodicidade": "Trimestral (4 edições por ano)",
   "preprint": "Sim. Aceita preprints. O autor deve informar o DOI do preprint no sistema de submissão.",
   "licenca": "",
-  "data_auditoria": "2026-03-30",
+  "data_auditoria": "2026-10-08",
   "url_fonte_instrucoes": "https://journals.sagepub.com/author-instructions/tcr",
-  "ultima_atualizacao_normas": null,
+  "ultima_atualizacao_normas": "2026-10-08",
   "formatacao_origem": "extraido",
   "links": {
     "site": "https://journals.sagepub.com/home/tcr",
@@ -23,16 +23,16 @@
     "diretrizes": "https://journals.sagepub.com/author-instructions/tcr"
   },
   "limites": {
-    "artigo_palavras": "7000 a 9000 palavras (incluindo referências, notas e tabelas)",
+    "artigo_palavras": "7000 a 9000 palavras (recomendado; limite máximo aceito de até 10.000 palavras, incluindo referências, notas e tabelas)",
     "nota_tecnica_palavras": "",
     "comentario_critico_palavras": "",
-    "resumo_maximo": "100 a 120 palavras",
+    "resumo_maximo": "Até 150 palavras",
     "titulo_maximo": null,
-    "palavras_chave_quantidade": "Até 5",
+    "palavras_chave_quantidade": "3 a 5",
     "autores_maximo": null,
     "notas_rodape_palavras": "",
     "notas_rodape_formato": "",
-    "outros_limites": "Artigos de revisão teórica ou ensaios críticos: até 10.000 palavras (mediante justificativa). Resenhas de livros: 1000 a 1500 palavras."
+    "outros_limites": "Resenhas de livros: 1000 a 1500 palavras."
   },
   "formatacao": {
     "fonte": "Times New Roman",
@@ -47,20 +47,22 @@
       "espacamento": "simples"
     },
     "tabelas_figuras": "Inseridas no corpo do texto ou ao final, cada uma em página separada, numeradas sequencialmente com títulos e legendas.",
-    "citacoes_formato": "Estilo autor-data (ex.: Garland, 2001, p. 45). Para três ou mais autores: (Garland et al., 2001).",
-    "referencias_formato": "Estilo SAGE Harvard Reference Style. Lista em ordem alfabética ao final.",
+    "citacoes_formato": "Estilo autor-data (ex.: Garland, 2001, p. 45). Para três ou mais autores: (Garland et al., 2001). Estilos aceitos: APA 7ª edição ou SAGE Harvard.",
+    "referencias_formato": "Estilo APA (7ª edição) ou SAGE Harvard Reference Style. Lista em ordem alfabética ao final com inclusão obrigatória de DOIs sempre que disponíveis.",
     "exemplos_citacoes": "(Garland, 2001, p. 45) ou (Garland et al., 2001)",
     "exemplos_referencias": ""
   },
   "tipos_texto": [
     {
       "tipo": "Artigo",
-      "extensao": "7000 a 9000 palavras",
+      "extensao": "7000 a 9000 palavras (aceita até 10.000 palavras no total)",
       "detalhes": "Artigos originais que apresentem contribuições teóricas significativas para a criminologia, bem como pesquisas empíricas com forte ancoragem teórica.",
       "titulacao_minima_autor": "",
-      "idiomas_aceitos": ["Inglês"],
-      "resumo_maximo_palavras": 120,
-      "palavras_chave_quantidade": "Até 5",
+      "idiomas_aceitos": [
+        "Inglês"
+      ],
+      "resumo_maximo_palavras": 150,
+      "palavras_chave_quantidade": "3 a 5",
       "estrutura_sugerida": [],
       "requisitos_especificos": [
         "O manuscrito não deve ter sido publicado anteriormente nem estar sob consideração por outro periódico.",
@@ -79,7 +81,9 @@
       "extensao": "1000 a 1500 palavras",
       "detalhes": "Resenhas críticas de livros recentes (últimos 2 anos) com relevância teórica para a criminologia.",
       "titulacao_minima_autor": "",
-      "idiomas_aceitos": ["Inglês"],
+      "idiomas_aceitos": [
+        "Inglês"
+      ],
       "resumo_maximo_palavras": null,
       "palavras_chave_quantidade": null,
       "estrutura_sugerida": [],
@@ -96,10 +100,10 @@
     "O manuscrito é original e não foi publicado nem está sob avaliação em outro periódico.",
     "O arquivo do manuscrito está anonimizado, sem identificação de autores ou afiliações.",
     "A página de rosto contém todos os dados dos autores (nome completo, afiliação, ORCID, e-mail).",
-    "O resumo tem entre 100 e 120 palavras e reflete o conteúdo do artigo.",
-    "Foram fornecidas até 5 palavras-chave.",
+    "O resumo tem até 150 palavras e reflete o conteúdo do artigo.",
+    "Foram fornecidas de 3 a 5 palavras-chave.",
     "Todas as fontes citadas no texto estão presentes na lista de referências e vice-versa.",
-    "As referências seguem o estilo SAGE Harvard.",
+    "As referências seguem o estilo APA (7ª edição) ou SAGE Harvard com indicação de DOIs.",
     "A carta de apresentação justifica a relevância teórica do trabalho.",
     "Tabelas e figuras estão numeradas e com títulos/legendas adequados.",
     "Se houver preprint, o DOI foi informado no sistema de submissão."
