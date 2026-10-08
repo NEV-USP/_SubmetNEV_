@@ -4,16 +4,16 @@
   "imagem": "imagem/british_journal_of_criminology.png",
   "instituicao": "Oxford University Press",
   "qualis": "A1",
-  "issn": "0007-0955",
+  "issn": "0007-0955 (impresso) | 1464-3529 (online)",
   "foco": "Pesquisas teóricas e empíricas de alta qualidade em todas as áreas da criminologia, incluindo justiça criminal, direito penal, sociologia do desvio, vitimologia e estudos de segurança.",
   "descricao": "Periódico acadêmico internacional publicado pela Oxford University Press em nome do Centre for Crime and Justice Studies (Londres). Reconhecido por publicar pesquisas inovadoras e artigos que influenciam políticas públicas e debates contemporâneos sobre crime, punição e justiça.",
-  "avaliacao": "Revisão por pares anônima (double-blind peer review).",
-  "avaliacao_preprint": "",
-  "taxa": "",
+  "avaliacao": "Revisão por pares anônima (double-blind peer review). Os manuscritos devem ser totalmente anonimizados (substituir auto-citações por 'XXXX + ano').",
+  "avaliacao_preprint": "Permite submissão de artigos previamente depositados em servidores de preprints não comerciais confiáveis, sem prejuízo no processo editorial.",
+  "taxa": "Gratuita (modelo de assinatura / acesso aberto opcional via APC para quem desejar/exigir financiador). Não há taxa para submissão ou avaliação.",
   "periodicidade": "Bimestral",
-  "preprint": "",
-  "licenca": "",
-  "data_auditoria": "2026-03-30",
+  "preprint": "Permite preprints.",
+  "licenca": "Oxford University Press Standard Publication License / CC BY para Open Access",
+  "data_auditoria": "2026-10-08",
   "url_fonte_instrucoes": "https://academic.oup.com/bjc/pages/General_Instructions",
   "ultima_atualizacao_normas": null,
   "formatacao_origem": "extraido",
@@ -23,62 +23,62 @@
     "diretrizes": "https://academic.oup.com/bjc/pages/General_Instructions"
   },
   "limites": {
-    "artigo_palavras": "Até 8.000 palavras (excluindo referências, tabelas e resumo)",
+    "artigo_palavras": "8.000 a 10.000 palavras (incluindo notas de rodapé, mas excluindo referências, tabelas e resumos)",
     "nota_tecnica_palavras": "",
     "comentario_critico_palavras": "",
-    "resumo_maximo": "200 toques",
+    "resumo_maximo": "120 palavras",
     "titulo_maximo": null,
-    "palavras_chave_quantidade": "5 a 8",
+    "palavras_chave_quantidade": "3 a 6",
     "autores_maximo": null,
     "notas_rodape_palavras": "",
-    "notas_rodape_formato": "",
-    "outros_limites": "Resenhas de livros: até 3.000 palavras (mediante convite)."
+    "notas_rodape_formato": "Devem ser reduzidas ao mínimo essencial e integradas sequencialmente",
+    "outros_limites": "Resenhas de livros: até 3.000 palavras (mediante convite dos editores de resenhas)."
   },
   "formatacao": {
     "fonte": "Times New Roman",
     "tamanho_fonte": 12,
     "espacamento_entrelinhas": "Duplo",
     "margens": "2,5 cm (1 polegada)",
-    "recuo_primeira_linha": "",
+    "recuo_primeira_linha": "1,25 cm",
     "alinhamento": "Esquerda",
     "citacoes_longas": {
       "recuo": "1,25 cm",
       "fonte": 11,
       "espacamento": "simples"
     },
-    "tabelas_figuras": "Numeradas sequencialmente, com títulos e fontes. Podem ser inseridas no texto ou ao final.",
-    "citacoes_formato": "Estilo autor-data (ex.: Garland, 2001:45). Para três ou mais autores: (Garland et al., 2001).",
-    "referencias_formato": "Estilo Oxford (BJC) – adaptado do Harvard. Lista em ordem alfabética ao final.",
-    "exemplos_citacoes": "(Garland, 2001:45) ou (Garland et al., 2001)",
-    "exemplos_referencias": ""
+    "tabelas_figuras": "Numeradas sequencialmente. Devem ser agrupadas ao final do manuscrito (após as referências), com indicação clara no texto de onde devem ser inseridas (ex: [Figure 1 near here]).",
+    "citacoes_formato": "Estilo autor-data no formato (Garland 2001) ou (Garland 2001: 45). Para três ou mais autores: (Garland et al. 2001). Auto-citações anonimizadas como (XXXX 2001).",
+    "referencias_formato": "Estilo Oxford BJC (Harvard adaptado). Apresentadas em ordem alfabética ao final. Nomes de periódicos por extenso.",
+    "exemplos_citacoes": "(Garland 2001: 45) ou (Garland et al. 2001)",
+    "exemplos_referencias": "GARLAND, D. (2001), The Culture of Control: Crime and Social Order in Contemporary Society. Oxford University Press."
   },
   "tipos_texto": [
     {
       "tipo": "Artigo",
-      "extensao": "Até 8.000 palavras",
+      "extensao": "8.000 a 10.000 palavras",
       "detalhes": "Artigos originais que contribuam significativamente para o conhecimento criminológico, baseados em pesquisa empírica sólida ou desenvolvimento teórico rigoroso.",
       "titulacao_minima_autor": "",
       "idiomas_aceitos": ["Inglês"],
-      "resumo_maximo_palavras": 200,
-      "palavras_chave_quantidade": "5 a 8",
+      "resumo_maximo_palavras": 120,
+      "palavras_chave_quantidade": "3 a 6",
       "estrutura_sugerida": [
-        "Página de rosto com título, autores, afiliações, ORCID, e-mail do autor correspondente e agradecimentos",
-        "Resumo (até 200 palavras)",
-        "Palavras-chave (5 a 8)",
+        "Página de rosto em separado com título, autores, afiliações, ORCID, e-mail do autor correspondente, financiamento e agradecimentos",
+        "Documento principal anonimizado",
+        "Resumo (até 120 palavras)",
+        "Palavras-chave (3 a 6)",
         "Introdução",
-        "Métodos (se aplicável)",
-        "Resultados/Análise (se aplicável)",
-        "Discussão",
-        "Conclusão",
+        "Métodos / Dados (se aplicável)",
+        "Análise e Resultados",
+        "Discussão e Conclusão",
         "Referências",
-        "Notas de rodapé (se houver)"
+        "Tabelas e Figuras (no final do arquivo)"
       ],
       "requisitos_especificos": [
         "O manuscrito não deve ter sido publicado anteriormente nem estar sob consideração por outro periódico.",
         "Submissão exclusivamente via ScholarOne Manuscripts.",
-        "Arquivo principal deve estar anonimizado.",
+        "Arquivo principal deve estar completamente anonimizado (substituir nomes de autores por XXXX no texto e propriedades do arquivo).",
         "Todos os autores devem ter ORCID registrado.",
-        "Declaração de financiamento e conflito de interesses obrigatória."
+        "Declaração de financiamento (Funding) e conflito de interesses obrigatória no arquivo de folha de rosto separada."
       ],
       "referencias_minimas": null,
       "template": "templates/british_journal_of_criminology_artigo.docx",
@@ -88,38 +88,38 @@
     {
       "tipo": "Resenha de Livro",
       "extensao": "Até 3.000 palavras",
-      "detalhes": "Resenhas de livros recentes (últimos 2 anos) com relevância para a criminologia. Geralmente por convite.",
+      "detalhes": "Resenhas de livros recentes (últimos 2 anos) com relevância para a criminologia. Encomendadas pela equipe editorial.",
       "titulacao_minima_autor": "",
       "idiomas_aceitos": ["Inglês"],
       "resumo_maximo_palavras": null,
       "palavras_chave_quantidade": null,
       "estrutura_sugerida": [],
       "requisitos_especificos": [
-        "Consultar previamente os editores de resenhas antes de submeter."
+        "Consultar previamente os editores de resenhas do BJC antes de qualquer submissão espontânea."
       ],
       "referencias_minimas": null,
       "template": "templates/british_journal_of_criminology_resenha.docx",
       "submissao_aberta": false,
-      "justificativa_submissao": "Resenhas são geralmente encomendadas pelos editores."
+      "justificativa_submissao": "Resenhas são encomendadas pelos editores."
     }
   ],
   "checklist": [
     "O manuscrito não foi publicado previamente e não está sob avaliação em outro periódico.",
-    "O arquivo do manuscrito está anonimizado para double-blind review.",
-    "A página de rosto contém título, autores completos, afiliações, ORCID e e-mail do autor correspondente.",
-    "O resumo tem até 200 palavras e descreve claramente os objetivos, métodos e principais conclusões.",
-    "Foram fornecidas entre 5 e 8 palavras-chave.",
-    "Todas as referências estão completas e formatadas no estilo Oxford (BJC).",
-    "As citações no texto seguem o padrão autor-data (ex.: autor, ano: páginas).",
-    "Tabelas e figuras estão numeradas e acompanhadas de títulos e fontes.",
-    "A carta de apresentação inclui justificativa da relevância e declaração de conflito de interesses.",
-    "Financiamentos e agradecimentos estão declarados na página de rosto."
+    "O arquivo principal está estritamente anonimizado (citações do próprio autor substituídas por XXXX).",
+    "A folha de rosto é submetida em arquivo separado e contém título, autores completos, afiliações, ORCID, e-mail e declarações.",
+    "O resumo tem no máximo 120 palavras e apresenta de forma sucinta o estudo.",
+    "Foram fornecidas entre 3 e 6 palavras-chave.",
+    "O tamanho do texto está no intervalo de 8.000 a 10.000 palavras.",
+    "Todas as referências seguem o estilo Oxford BJC.",
+    "As citações no texto seguem o padrão autor-data (ex.: Garland 2001: 45).",
+    "Tabelas e figuras estão posicionadas ao final do arquivo, após as referências.",
+    "Declaração de financiamento (Funding Statement) e de ausência de conflito de interesses foram incluídas na folha de rosto."
   ],
   "instrucoes_adicionais": {
-    "contribuicao_autores": "A contribuição de cada autor deve ser explicitada (recomenda-se CRediT).",
-    "disponibilidade_dados": "O periódico incentiva o compartilhamento de dados e códigos em repositórios confiáveis.",
-    "declaracao_dados_opcoes": null,
-    "financiamento": "Declarar todas as fontes de financiamento na página de rosto.",
-    "preprint": ""
+    "contribuicao_autores": "A contribuição de cada autor deve ser especificada no arquivo de folha de rosto (recomenda-se o padrão da taxonomia CRediT).",
+    "disponibilidade_dados": "O BJC exige uma declaração sobre disponibilidade de dados (Data Availability Statement) informando onde e como os dados da pesquisa podem ser acessados.",
+    "declaracao_dados_opcoes": "Os autores devem declarar se os dados estão abertos em repositórios, disponíveis mediante solicitação razoável ou se não podem ser compartilhados por questões éticas/legais.",
+    "financiamento": "Declarar obrigatoriamente todas as fontes de apoio financeiro na seção 'Funding' do arquivo de folha de rosto.",
+    "preprint": "Permite preprints. A submissão de manuscritos hospedados em repositórios prévios deve ser declarada no processo de envio no ScholarOne."
   }
 }
